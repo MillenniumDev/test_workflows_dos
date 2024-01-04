@@ -9,5 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: test
-        shell: python3
-        run: print(type(${{env.count}}))
+        shell: bash
+        run: |
+          python3
+          print(type(${{env.count}}))
