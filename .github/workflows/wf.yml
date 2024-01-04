@@ -8,5 +8,6 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-        - run: echo ${{ env.count }}
-        - run: echo fromJSON(${{ env.count }})
+      - id: test
+        shell: python3
+        run: print(type(${{env.count}}))
