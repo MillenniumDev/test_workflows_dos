@@ -24,7 +24,7 @@ jobs:
           python3 - <<EOF
           import json
           import sys
-          input = '${{ toJson(vars) }}"'
+          input = '${{ toJson(vars) }}'
           print(input)
 
           sys.exit(0)
