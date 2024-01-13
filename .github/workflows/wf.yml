@@ -17,4 +17,4 @@ jobs:
         
       - id: test
         shell: bash
-        run: python3 -c "print(${{ vars }})"
+        run: python3 -c "print(${{ toJson(vars) }})"
