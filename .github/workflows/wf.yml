@@ -8,7 +8,7 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - if: ${{ env.input == "" }}
+      - if: ${{ env.input == '' }}
         id: validate-env-not-empty
         run: exit 1
         
