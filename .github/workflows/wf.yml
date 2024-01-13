@@ -22,11 +22,11 @@ jobs:
         shell: bash
         run: |
           python3 - <<EOF
-            import json
-            import sys
-            input = '${{ toJson(vars) }}"'
-            print(input)
+          import json
+          import sys
+          input = '${{ toJson(vars) }}"'
+          print(input)
 
-            sys.exit(0)
+          sys.exit(0)
           EOF
         # run: python3 -c "import json; print(json.loads('${{ toJson(vars) }}'))"
