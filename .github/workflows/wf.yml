@@ -50,8 +50,8 @@ jobs:
           print(input)
           print(input.get('BOOLEAN_VAR'))
           for k,v in input.items():
-            print("k={} , type=type({})".format(k,k))
-            print("v={} , type=type({})".format(v,v))
+            print("k={} , type={}".format(k,type(k)))
+            print("v={} , type={}".format(v,type(v)))
 
           sys.exit(0)
           EOF
