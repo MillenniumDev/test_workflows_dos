@@ -8,9 +8,12 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - if: ${{ env.input == '' }}
+      - if: ${{ vars.NAME == '' }}
         id: validate-env-not-empty
         run: exit 1
+      - id: print-input
+        run: echo ${{ vars.NAME }}
+
         
       - id: test
         shell: bash
