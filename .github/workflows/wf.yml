@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - if: ${{ vars.NAME == '' }}
-        id: validate-env-not-empty
+        name: validate-env-not-empty
         run: exit 1
       - id: print-input
         run: echo ${{ vars.NAME }}
@@ -18,18 +18,18 @@ jobs:
       #   shell: bash
       #   run: echo ${{ toJson(vars) }}
 
-      - id: print-env-if-true-typecasted
+      - name: print-env-if-true-typecasted
         if: ${{ toJson(vars.BOOLEAN_VAR) }}
         shell: bash
         run: echo ${{ toJson(vars.BOOLEAN_VAR) }}
 
-      - id: print-env-if-false-typecasted
+      - name: print-env-if-false-typecasted
         if: ${{ ! toJson(vars.BOOLEAN_VAR) }}
         shell: bash
         run: |
           echo ${{ toJson(vars.BOOLEAN_VAR) }}
 
-      - id: print-env-if-true
+      - name: print-env-if-true
         if: ${{ vars.BOOLEAN_VAR }}
         shell: bash
         run: echo ${{ vars.BOOLEAN_VAR }}
@@ -40,7 +40,7 @@ jobs:
         run: |
           echo ${{ vars.BOOLEAN_VAR }}
 
-      - id: test
+      - name: test-python
         shell: bash
         run: |
           python3 - <<EOF
