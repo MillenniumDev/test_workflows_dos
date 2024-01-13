@@ -20,4 +20,4 @@ jobs:
 
       - id: test
         shell: bash
-        run: python3 -c "print(dict(${{ toJson(vars) }}))"
+        run: python3 -c "import json; print(json.loads('${{ toJson(vars) }}'))"
