@@ -17,14 +17,28 @@ jobs:
       # - id: test
       #   shell: bash
       #   run: echo ${{ toJson(vars) }}
-      - id: print-env-if-true
+
+      - id: print-env-if-true-typecasted
         if: ${{ toJson(vars.BOOLEAN_VAR) }}
         shell: bash
         run: echo ${{ toJson(vars.BOOLEAN_VAR) }}
-      - id: print-env-if-false
-        if: toJson(vars.BOOLEAN_VAR) }}
+
+      - id: print-env-if-false-typecasted
+        if: ${{ ! toJson(vars.BOOLEAN_VAR) }}
         shell: bash
-        run: echo ${{ toJson(vars.BOOLEAN_VAR) }}
+        run: |
+          echo ${{ toJson(vars.BOOLEAN_VAR) }}
+
+      - id: print-env-if-true
+        if: ${{ vars.BOOLEAN_VAR }}
+        shell: bash
+        run: echo ${{ vars.BOOLEAN_VAR }}
+
+      - id: print-env-if-false
+        if: ${{ ! vars.BOOLEAN_VAR }}
+        shell: bash
+        run: |
+          echo ${{ vars.BOOLEAN_VAR }}
 
       - id: test
         shell: bash
