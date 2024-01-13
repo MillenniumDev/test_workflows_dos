@@ -49,7 +49,7 @@ jobs:
           input = ${{ toJson(vars) }}
           print(input)
           print(input.get(str(BOOLEAN_VAR)))
-          print(${{vars.BOOLEAN_VAR}})
+          # print(${{vars.BOOLEAN_VAR}})
 
           sys.exit(0)
           EOF
