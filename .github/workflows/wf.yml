@@ -48,7 +48,7 @@ jobs:
           import sys
           input = ${{ toJson(vars) }}
           print(input)
-          print(str(input.get(str(BOOLEAN_VAR))))
+          print(input.get('BOOLEAN_VAR'))
           # print(${{vars.BOOLEAN_VAR}})
 
           sys.exit(0)
