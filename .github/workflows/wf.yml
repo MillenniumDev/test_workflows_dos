@@ -49,7 +49,7 @@ jobs:
           input = ${{ toJson(vars) }}
           print(input)
           print(input.get('BOOLEAN_VAR'))
-          for k,v in input:
+          for k,v in input.items():
             print("k={} , type=type({})".format(k))
             print("v={} , type=type({})".format(v))
 
