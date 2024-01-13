@@ -14,10 +14,10 @@ jobs:
       - id: print-input
         run: echo ${{ vars.NAME }}
 
-      - id: test
-        shell: bash
-        run: echo ${{ toJson(vars) }}
-
       # - id: test
       #   shell: bash
-      #   run: python3 -c "print(${{ toJson(vars) }})"
+      #   run: echo ${{ toJson(vars) }}
+
+      - id: test
+        shell: bash
+        run: python3 -c "print(dict(${{ toJson(vars) }}))"
