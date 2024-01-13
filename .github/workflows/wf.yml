@@ -8,6 +8,10 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
+      - if: ${{ env.input == "" }}
+        id: validate-env-not-empty
+        run: exit 1
+        
       - id: test
         shell: bash
         run: python3 -c "print(type(${{env.count}}))"
