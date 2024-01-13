@@ -17,4 +17,4 @@ jobs:
         
       - id: test
         shell: bash
-        run: python3 -c "print(type(${{env.count}}))"
+        run: python3 -c "print(${{ vars }})"
