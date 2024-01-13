@@ -17,6 +17,14 @@ jobs:
       # - id: test
       #   shell: bash
       #   run: echo ${{ toJson(vars) }}
+      - id: print-env-if-true
+        if: ${{ toJson(vars.BOOLEAN_VAR) }}
+        shell: bash
+        run: echo ${{ toJson(vars.BOOLEAN_VAR) }}
+      - id: print-env-if-false
+        if: toJson(vars.BOOLEAN_VAR) }}
+        shell: bash
+        run: echo ${{ toJson(vars.BOOLEAN_VAR) }}
 
       - id: test
         shell: bash
