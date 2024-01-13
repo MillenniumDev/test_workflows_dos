@@ -23,6 +23,9 @@ jobs:
         run: |
           python3 
             import json
+            import sys
             input = "${{ toJson(vars) }}"
             print(input)
+
+            sys.exit(0)
         # run: python3 -c "import json; print(json.loads('${{ toJson(vars) }}'))"
